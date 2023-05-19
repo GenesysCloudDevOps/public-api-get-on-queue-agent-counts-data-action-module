@@ -1,0 +1,70 @@
+{
+    "id": "bcdcb522-ccfb-48b6-b748-743c5fccfce3",
+    "name": "Get On Queue Agent Counts Data Action Module",
+    "description": "A Terraform/CX as Code remote module for the following Genesys Cloud public API operation: Get On Queue Agent Counts",
+    "origin": "genesys",
+    "type": "module",
+    "classification": "Analytics",
+    "tags": [
+        "Analytics",
+        "Routing"
+    ],
+    "permissions": [
+        "analytics:queueObservation:view"
+    ],
+    "documentation": [],
+    "presentation": [
+        {
+            "title": "Page 1",
+            "schema": {
+                "title": "Data Action Setup",
+                "description": "Setup your data action deployment",
+                "type": "object",
+                "properties": [
+                    {
+                        "action_name": {
+                            "description": "The name for the data action",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "action_category": {
+                            "description": "Category of action",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "integration_id": {
+                            "description": "The ID of the integration this action is associated with.",
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "secure_data_action": {
+                            "description": "Indication of whether or not the action is designed to accept sensitive data.",
+                            "type": "boolean",
+                            "default": "false"
+                        }
+                    }
+                ],
+                "required": [
+                    "action_name",
+                    "action_category",
+                    "integration_id"
+                ]
+            }
+        }
+    ],
+    "results": {
+        "entities": [
+            {
+                "type": "dataAction",
+                "visibility": "VISIBLE"
+            },
+            {
+                "type": "integration",
+                "visibility": "VISIBLE"
+            }
+        ]
+    }
+}
